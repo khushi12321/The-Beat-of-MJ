@@ -1,153 +1,800 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Clean Blog - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
-                    </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Kingdom - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Enhanced MJ Theme */
+        :root {
+            --mj-red: #c8102e;
+            --mj-gold: #d4a017;
+            --mj-silver: #c0c0c0;
+            --mj-dark: #1a1a1a;
+            --mj-darker: #0d0d0d;
+            --mj-white: #ffffff;
+            --bs-primary: #c8102e;
+            --bs-secondary: #1c2526;
+            --bs-success: #d4a017;
+            --bs-dark: #000;
+            --bs-white: #fff;
+            --bs-body-bg: #1c2526;
+            --bs-body-color: #fff;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--mj-dark) 0%, var(--mj-darker) 100%);
+            color: var(--mj-white);
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--mj-gold);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--mj-red), var(--mj-gold));
+            /*-webkit-background-clip: text;*/
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
+        }
+
+        .nav-link {
+            color: var(--mj-white) !important;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--mj-gold) !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--mj-gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Enhanced Header Section */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--mj-gold);
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(212, 160, 23, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+            z-index: 2;
+            position: relative;
+        }
+
+        header .lead {
+            font-size: 1.5rem;
+            color: var(--mj-silver);
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Enhanced Buttons */
+        .btn-primary {
+            background: linear-gradient(45deg, var(--mj-red), #ff1744);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(200, 16, 46, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(200, 16, 46, 0.5);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(45deg, var(--mj-gold), #ffb300);
+            border: none;
+            color: var(--mj-dark);
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 160, 23, 0.4);
+            color: var(--mj-dark);
+        }
+
+        /* Stats Section Enhancement */
+        .stats-section {
+            background: linear-gradient(135deg, var(--mj-red), #8b0000);
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+            background-size: 50px 50px;
+        }
+
+        .stats-section h3 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--mj-white);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        .stats-section p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Enhanced Cards */
+        .card {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 160, 23, 0.3);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 160, 23, 0.1), transparent);
+            transition: all 0.8s ease;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--mj-gold);
+            box-shadow: 0 20px 40px rgba(212, 160, 23, 0.2);
+        }
+
+        /* Section Backgrounds */
+        .bg-secondary {
+            background: var(--mj-darker) !important;
+        }
+
+        .bg-dark {
+            background: var(--mj-dark) !important;
+        }
+
+        .text-white-50 {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        /* Enhanced Music Player */
+        .music-player-section {
+            background: linear-gradient(135deg, var(--mj-dark), var(--mj-darker));
+            padding: 60px 0;
+        }
+
+        .music-player {
+            background: linear-gradient(135deg, var(--mj-dark), var(--mj-darker));
+            border: 2px solid var(--mj-gold);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .album-art {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--mj-gold);
+            margin: 0 auto 20px;
+            animation: rotate 10s linear infinite;
+            background: linear-gradient(45deg, var(--mj-red), var(--mj-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--mj-gold);
+            color: var(--mj-dark);
+            border: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1);
+            background: var(--mj-red);
+            color: white;
+        }
+
+        /* Progress bar styling */
+        .progress {
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .progress-bar {
+            background: linear-gradient(45deg, var(--mj-red), var(--mj-gold));
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        /* Footer Enhancement */
+        footer {
+            background: var(--mj-darker);
+            border-top: 2px solid var(--mj-gold);
+            padding: 40px 0 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(212, 160, 23, 0.5); }
+            to { text-shadow: 0 0 30px rgba(212, 160, 23, 0.8); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(-10px) rotate(240deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            header .lead { font-size: 1.2rem; }
+            .stats-section h3 { font-size: 2rem; }
+        }
+
+        /* Fun fact button styling */
+        .fact-display {
+            background: rgba(212, 160, 23, 0.1);
+            border: 2px solid var(--mj-gold);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .fact-display:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 160, 23, 0.2);
+        }
+    </style>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-crown me-2"></i>MJ Kingdom</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="music.html">Music</a></li>
+                    <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="legacy.html">Legacy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center py-5">
+        <div class="hero-particles"></div>
+        <div class="container" style="z-index: 2; position: relative;">
+            <h1>MICHAEL JACKSON</h1>
+            <p class="lead">The Eternal King of Pop</p>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-4">
+                    <a href="music.html" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-music me-2"></i>Explore Music
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="videos.html" class="btn btn-success btn-lg">
+                        <i class="fas fa-play me-2"></i>Watch Videos
+                    </a>
                 </div>
             </div>
-        </nav>
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading">
-                            <h1>Clean Blog</h1>
-                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+        </div>
+    </header>
+
+    <section class="py-5 stats-section">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="stat-number" data-target="70">0</h3>
+                    <p>Million Records Sold</p>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="stat-number" data-target="13">0</h3>
+                    <p>Grammy Awards</p>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="stat-number" data-target="39">0</h3>
+                    <p>Guinness World Records</p>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="stat-number" data-target="300">0</h3>
+                    <p>Million Donated</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="text-center text-white mb-5">
+                The Legend Lives On
+                <div style="width: 100px; height: 4px; background: var(--mj-gold); margin: 20px auto;"></div>
+            </h2>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                    <div class="text-center mb-4">
+                        <p class="text-white-50 lead">Michael Jackson transformed the music industry forever. From his early days with the Jackson 5 to becoming the world's biggest solo artist, his influence extends far beyond music.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-star text-warning me-3 fs-4"></i>
+                                <span class="text-white-50">Revolutionized music videos</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-star text-warning me-3 fs-4"></i>
+                                <span class="text-white-50">Broke down racial barriers</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-star text-warning me-3 fs-4"></i>
+                                <span class="text-white-50">Pioneered modern pop music</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-star text-warning me-3 fs-4"></i>
+                                <span class="text-white-50">Humanitarian and philanthropist</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                            <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 24, 2023
-                        </p>
+            <div class="row mt-5">
+                <div class="col-md-6 mb-4">
+                    <div class="card text-white h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-microphone-alt mb-3" style="font-size: 3rem; color: var(--mj-gold);"></i>
+                            <h5 class="card-title">Vocals</h5>
+                            <p class="card-text text-white-50">Distinctive voice spanning four octaves with incredible range and emotion.</p>
+                        </div>
                     </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="post.html"><h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2></a>
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 18, 2023
-                        </p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card text-white h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-running mb-3" style="font-size: 3rem; color: var(--mj-gold);"></i>
+                            <h5 class="card-title">Dance</h5>
+                            <p class="card-text text-white-50">Revolutionary moves like the moonwalk that inspired generations.</p>
+                        </div>
                     </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Science has not yet mastered prophecy</h2>
-                            <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</h3>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on August 24, 2023
-                        </p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card text-white h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-film mb-3" style="font-size: 3rem; color: var(--mj-gold);"></i>
+                            <h5 class="card-title">Videos</h5>
+                            <p class="card-text text-white-50">Cinematic masterpieces that transformed music videos into art.</p>
+                        </div>
                     </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Failure is not an option</h2>
-                            <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on July 8, 2023
-                        </p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card text-white h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-heart mb-3" style="font-size: 3rem; color: var(--mj-gold);"></i>
+                            <h5 class="card-title">Humanity</h5>
+                            <p class="card-text text-white-50">Dedicated his life to healing the world through music and charity.</p>
+                        </div>
                     </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Pager-->
-                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
                 </div>
             </div>
         </div>
-        <!-- Footer-->
-        <footer class="border-top">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <ul class="list-inline text-center">
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2023</div>
+    </section>
+
+    <section class="py-5 bg-secondary">
+        <div class="container">
+            <h2 class="text-center text-white mb-5">
+                Amazing MJ Facts
+                <div style="width: 100px; height: 4px; background: var(--mj-gold); margin: 20px auto;"></div>
+            </h2>
+            <div class="row mt-4">
+                <div class="col-md-6 mb-4">
+                    <div class="card text-white h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title">Thriller Success</h5>
+                                <i class="fas fa-trophy" style="color: var(--mj-gold); font-size: 1.5rem;"></i>
+                            </div>
+                            <p class="card-text text-white-50">Best-selling album with over 70 million copies sold, 37 weeks at #1.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card text-white h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title">Moonwalk Magic</h5>
+                                <i class="fas fa-moon" style="color: var(--mj-gold); font-size: 1.5rem;"></i>
+                            </div>
+                            <p class="card-text text-white-50">Perfected on Motown 25 in 1983, mesmerizing the world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card text-white h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title">Global Impact</h5>
+                                <i class="fas fa-globe" style="color: var(--mj-gold); font-size: 1.5rem;"></i>
+                            </div>
+                            <p class="card-text text-white-50">First Western artist with a top album in India, broke MTV barriers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card text-white h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title">Charity Champion</h5>
+                                <i class="fas fa-hand-holding-heart" style="color: var(--mj-gold); font-size: 1.5rem;"></i>
+                            </div>
+                            <p class="card-text text-white-50">Supported 39 charities, donated over $300 million.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+            <div class="text-center mt-4">
+                <div class="fact-display" id="fun-fact-display" style="display: none;">
+                    <p class="text-white mb-0" id="fun-fact">Random MJ Fact</p>
+                </div>
+                <button class="btn btn-success mt-3" onclick="changeFunFact()">
+                    <i class="fas fa-dice me-2"></i>Next Fact
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 music-player-section">
+        <div class="container">
+            <h2 class="text-center text-white mb-5">
+                Experience His Music
+                <div style="width: 100px; height: 4px; background: var(--mj-gold); margin: 20px auto;"></div>
+            </h2>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                    <div class="music-player">
+                        <div class="album-art mb-3">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h5 class="text-white">Billie Jean</h5>
+                        <p class="text-white-50 mb-3">Thriller (1982)</p>
+                        <div class="d-flex justify-content-center mb-3">
+                            <button class="control-btn">
+                                <i class="fas fa-backward"></i>
+                            </button>
+                            <button class="control-btn mx-2">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="control-btn">
+                                <i class="fas fa-forward"></i>
+                            </button>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar" role="progressbar" style="width: 45%"></div>
+                        </div>
+                        <div class="d-flex justify-content-between small text-white-50">
+                            <span>2:34</span>
+                            <span>4:54</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="text-center text-white mb-5">
+                Latest MJ News
+                <div style="width: 100px; height: 4px; background: var(--mj-gold); margin: 20px auto;"></div>
+            </h2>
+            <div class="row mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-white h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h6 class="text-warning">August 2025</h6>
+                                <i class="fas fa-calendar" style="color: var(--mj-gold);"></i>
+                            </div>
+                            <h5 class="card-title">MJ Fan Event in Nepal</h5>
+                            <p class="card-text text-white-50">A local tribute concert celebrates his legacy at 04:21 PM today!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-white h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h6 class="text-warning">July 2025</h6>
+                                <i class="fas fa-tshirt" style="color: var(--mj-gold);"></i>
+                            </div>
+                            <h5 class="card-title">New MJ Merch Release</h5>
+                            <p class="card-text text-white-50">Limited-edition jackets inspired by <em>Thriller</em>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-white h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h6 class="text-warning">June 2025</h6>
+                                <i class="fas fa-hashtag" style="color: var(--mj-gold);"></i>
+                            </div>
+                            <h5 class="card-title">MJ Dance Challenge</h5>
+                            <p class="card-text text-white-50">Global fans recreate the moonwalk online.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <div class="container">
+            <p class="text-white-50 mb-2">© 2025 Michael Jackson Fanpage. A tribute to the King of Pop.</p>
+            <p class="text-white-50 mb-0">This is a fan-made website celebrating Michael Jackson's legacy.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Enhanced JavaScript functionality
+        
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.querySelector('.hero-particles');
+            if (particlesContainer) {
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+                    particle.style.animationDelay = Math.random() * 6 + 's';
+                    particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                    particlesContainer.appendChild(particle);
+                }
+            }
+        }
+
+        // Animate counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 100;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Enhanced fun facts from original scripts.js
+        const funFacts = [
+            "Thriller is the best-selling album with over 70 million copies sold!",
+            "MJ perfected the moonwalk on Motown 25 in 1983.",
+            "He won 13 Grammy Awards, including 8 for Thriller.",
+            "MJ was the first Western artist to top charts in India.",
+            "He donated over $300 million to charity.",
+            "Michael Jackson holds a patent for the anti-gravity lean shoes used in 'Smooth Criminal'.",
+            "He was the first black artist to receive heavy rotation on MTV with 'Billie Jean'.",
+            "MJ broke his own attendance record, performing to over 125,000 fans in Brazil.",
+            "He spoke 9 languages and his music united people across all cultures.",
+            "The 'Thriller' music video was one of the first to use groundbreaking special effects."
+        ];
+
+        function changeFunFact() {
+            const factElement = document.getElementById('fun-fact');
+            const factDisplay = document.getElementById('fun-fact-display');
+            const currentFact = factElement.textContent;
+            let newFact;
+            
+            do {
+                newFact = funFacts[Math.floor(Math.random() * funFacts.length)];
+            } while (newFact === currentFact && funFacts.length > 1);
+            
+            factElement.textContent = newFact;
+            factDisplay.style.display = 'block';
+            
+            // Scroll the fact into view
+            factDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(13, 13, 13, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+            }
+        });
+
+        // Add click effects to buttons
+        function playVisualEffect(element) {
+            element.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                element.style.transform = 'scale(1)';
+            }, 100);
+        }
+
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('btn') || e.target.closest('.btn')) {
+                const btn = e.target.classList.contains('btn') ? e.target : e.target.closest('.btn');
+                playVisualEffect(btn);
+            }
+        });
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            // Animate counters when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+
+            // Add hover effects to cards
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+    <script src="scripts.js"></script>
+</body>
 </html>
