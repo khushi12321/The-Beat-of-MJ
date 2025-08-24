@@ -1,5 +1,8 @@
 THE BEAT OF MJ - A fan tribute to the king of pop
 
+<img width="1897" height="971" alt="image" src="https://github.com/user-attachments/assets/0c38c12a-c9db-49e3-b8f8-7204839e30e1" />
+
+
 “The beat of MJ” is a fanpage website dedicated to the most iconic entertainer of the 1900s, Micheal Jackson, who revolutionized the English pop music industry through his songs, stages and fashion. Often dubbed as the “King of Pop”, from the Moonwalk to the Anti-Gravity lean, his artistry continues to inspire generations of music and dance lovers.
 The website will celebrate his music, dance, and cultural impact by including sections such as biography, album, videos, and  gallery. Along the way, you’ll also discover fun, interactive sections that introduce you to us, the passionate developers bringing this tribute to life.
 
