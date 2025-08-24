@@ -1,102 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Clean Blog - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="About The Beat of MJ - Meet the creators" />
+    <meta name="author" content="" />
+    <title>MJ Kingdom - About Us</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    
+    <style>
+        /* Enhanced MJ Theme - Same as index.html */
+        :root {
+            --mj-red: #c8102e;
+            --mj-gold: #d4a017;
+            --mj-silver: #c0c0c0;
+            --mj-dark: #1a1a1a;
+            --mj-darker: #0d0d0d;
+            --mj-white: #ffffff;
+            --bs-primary: #c8102e;
+            --bs-secondary: #1c2526;
+            --bs-success: #d4a017;
+            --bs-dark: #000;
+            --bs-white: #fff;
+            --bs-body-bg: #1c2526;
+            --bs-body-color: #fff;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--mj-dark) 0%, var(--mj-darker) 100%);
+            color: var(--mj-white);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* Navigation*/
+        .navbar {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--mj-gold);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--mj-red), var(--mj-gold));
+            background-clip: initial;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
+        }
+
+        .nav-link {
+            color: var(--mj-white) !important;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--mj-gold) !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--mj-gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Page Header */
+        .masthead {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('assets/img/about.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-heading h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(212, 160, 23, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .page-heading .subheading {
+            font-size: 1.5rem;
+            color: var(--mj-silver);
+        }
+
+        /* Main Content */
+        main {
+            background: var(--mj-dark);
+            padding: 60px 0;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--mj-silver);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .creators-title {
+            font-size: 2.5rem;
+            color: var(--mj-gold);
+            text-align: center;
+            margin: 3rem 0;
+            text-shadow: 0 0 15px rgba(212, 160, 23, 0.3);
+        }
+
+        /* Video styling */
+        video {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            border-radius: 15px;
+            border: 3px solid var(--mj-gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin: 2rem 0;
+        }
+
+        .creators-names {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--mj-gold);
+            margin: 2rem 0;
+            font-weight: 600;
+        }
+
+        /* Creator sections */
+        .creator-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-radius: 20px;
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 160, 23, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .creator-section:hover {
+            transform: translateY(-5px);
+            border-color: var(--mj-gold);
+            box-shadow: 0 15px 35px rgba(212, 160, 23, 0.1);
+        }
+
+        .creator-section:nth-child(even) {
+            background: rgba(200, 16, 46, 0.05);
+        }
+
+        .creator-section:nth-child(odd) {
+            background: rgba(212, 160, 23, 0.05);
+        }
+
+        .creator-section h3 {
+            color: var(--mj-gold);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(212, 160, 23, 0.3);
+        }
+
+        .creator-section p {
+            color: var(--mj-silver);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            color: var(--mj-white);
+            margin: 1rem 0;
+        }
+
+        table td, table th {
+            padding: 0.5rem;
+            border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+        }
+
+        table th {
+            background: rgba(212, 160, 23, 0.1);
+            color: var(--mj-gold);
+            font-weight: 600;
+        }
+
+        table b {
+            color: var(--mj-gold);
+        }
+
+        /* List styling */
+        ul {
+            color: var(--mj-silver);
+        }
+
+        ul li {
+            margin: 0.3rem 0;
+        }
+
+        .section-title {
+            color: var(--mj-gold);
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        /* Divider line */
+        .divider-line {
+            background: linear-gradient(to bottom, var(--mj-gold), var(--mj-red));
+            width: 4px;
+            margin: 0 1rem;
+        }
+
+        /* Footer - Same as index.html */
+        .footer {
+            background: var(--mj-darker);
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: var(--mj-silver);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--mj-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(212, 160, 23, 0.5); }
+            to { text-shadow: 0 0 30px rgba(212, 160, 23, 0.8); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .page-heading h1 { font-size: 2.5rem; }
+            .creators-title { font-size: 2rem; }
+            .creator-section { margin: 2rem 0; padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-crown me-2"></i>MJ Kingdom</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="music.html">Music</a></li>
+                    <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
             </div>
-        </nav>
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/about.jpeg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="page-heading">
-                            <h1>About Us</h1>
-                            <span class="subheading">This is what We do.</span>
-                        </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="page-heading text-center">
+                        <h1>About Us</h1>
+                        <span class="subheading">This is what We do.</span>
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- Main Content-->
-        <main class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Welcome to The Beat of MJ – the ultimate groove zone for every Michael Jackson fan! Here, it’s all about the King of Pop – the moonwalks, the spins, the iconic outfits, and of course, the music that makes our hearts dance. We’re here to celebrate MJ’s magic in the coolest way possible – from legendary throwbacks to fun facts, rare moments, and everything that keeps the MJ vibe alive! So if “Billie Jean” makes you move and “Thriller” gives you chills, you’re in the right place. Let’s jam to the beat of MJ together!</p>
-                        <p style="font-size: 34px;">
-                            Where every beat screams MJ! Meet the creators!!!
-                        </p>
-                        <video width="640" height="360" controls autoplay muted loop poster="thumbnail.jpg">
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mb-4">
+        <div id="welcome" class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <p class="intro-text">
+                        Welcome to The Beat of MJ – the ultimate groove zone for every Michael Jackson fan! Here, it's all about the King of Pop – the moonwalks, the spins, the iconic outfits, and of course, the music that makes our hearts dance. We're here to celebrate MJ's magic in the coolest way possible – from legendary throwbacks to fun facts, rare moments, and everything that keeps the MJ vibe alive! So if "Billie Jean" makes you move and "Thriller" gives you chills, you're in the right place. Let's jam to the beat of MJ together!
+                    </p>
+                    
+                    <h2 class="creators-title">
+                        Where every beat screams MJ! Meet the creators!!!
+                    </h2>
+                    
+                    <div class="text-center">
+                        <video controls autoplay muted loop poster="thumbnail.jpg">
                             <source src="assets/img/IMG_0652.MOV" type="video/mp4">
                             Your browser does not support the video tag.
-                          </video>
-                          
-                          
-                        <h5>Khushi Shrestha   |   Sichu Maharjan   |   Aviyaan Shrestha</h5>
-
-
+                        </video>
                     </div>
+                    
+                    <h5 class="creators-names">Khushi Shrestha | Sichu Maharjan | Aviyaan Shrestha</h5>
                 </div>
             </div>
-        <br>
-        
 
-        <div style="display: flex; flex-direction: row; gap: 10px ; background-color: rgb(209, 230, 237); padding-top: 20px;">
-            <div style=" flex:1">
-                <h3>Khushi shrestha</h3>
-                <p>"I come from a management background and am currently in my first year of BSc (Hons) Computing at Islington College. I have always been passionate about software development, and this coursework has given me the opportunity to design a webpage according to my vision. I aim to pursue a career in software development in the future."</p>
-                <table>
-                    <tr>
-                        <td><b>Date of Birth:</b></td>
-                        <td>2063-12-06</td>
-                    </tr>
-                    <tr>
-                        <td><b>Address:</b></td>
-                        <td>Manamaiju, Kathmandu</td>
-                    </tr>
-                    
-                    <tr>
-                        <td><b>Phone no:</b></td>
-                        <td>9840729639</td>
-                    </tr>
-                </table>
-                <br>
-                <b>Education:</b>
-                            <table width="70%">
+            <!-- Creator Profiles -->
+            <div id="khushi" class="creator-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Khushi Shrestha</h3>
+                        <p>"I come from a management background and am currently in my first year of BSc (Hons) Computing at Islington College. I have always been passionate about software development, and this coursework has given me the opportunity to design a webpage according to my vision. I aim to pursue a career in software development in the future."</p>
+                        
+                        <table class="table table-borderless">
+                            <tr>
+                                <td><b>Date of Birth:</b></td>
+                                <td>2063-12-06</td>
+                            </tr>
+                            <tr>
+                                <td><b>Address:</b></td>
+                                <td>Manamaiju, Kathmandu</td>
+                            </tr>
+                            <tr>
+                                <td><b>Phone no:</b></td>
+                                <td>9840729639</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="section-title">Education:</div>
+                        <table class="table table-borderless">
+                            <thead>
                                 <tr>
                                     <th>Level</th>
-                                    <th>Name of instution</th>
+                                    <th>Name of Institution</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
                                     <td>Bachelors:</td>
                                     <td>Islington College</td>
@@ -109,128 +368,138 @@
                                     <td>School level SEE:</td>
                                     <td>Kid's learning academy</td>
                                 </tr>
-                            </table><br>
-            </div>
-            <div style="background-color: black; width: 4px;"></div><!--makes a line in the middle-->
-            <div style=" flex:1">
-                    
-                    <b>Technical skills:</b>
-                            <ul>
-                                <li>SQL</li>
-                                <li>Java</li>
-                            </ul>
-                    <b>Soft Skills:</b>
-                            <ul>
-                                <li>Active listening</li>
-                                <li>Critical thinking</li>
-                            </ul>
-                    <b>Certification:</b>
-                            <ul>
-                                <li>Global Professional Pathway Course (Data Visualization)</li>
-                            </ul>
-                    <b>Achievement</b>
-                            <ul>
-                                <li>Best delegate in MUN</li>
-                            </ul>
-            </div>
-            </div>
-
-
-
-        <br>
-        <div style="display: flex; flex-direction: row; gap: 10px; background-color: rgb(226, 231, 226); padding-top: 20px;">
-        <div style=" flex:1">
-            <h3>Sichu Maharjana</h3>
-            <p>"I am a management background student currently studying 1<sup>st</sup>year of BSc Hons Computing at Islington College. I have always been interested in web developing. 
-                This coursework has presented a wonderful opportunity for me to develop a webpage as per my liking. I want to persue a career in web developing in the future."</p>
-            <table>
-                <tr>
-                    <td><b>Date of Birth:</b></td>
-                    <td>2063-03-12</td>
-                </tr>
-                <tr>
-                    <td><b>Address:</b></td>
-                    <td>Khusibu, Nayabazar</td>
-                </tr>
-                
-                <tr>
-                    <td><b>Phone no:</b></td>
-                    <td>9849543461</td>
-                </tr>
-            </table>
-            <br>
-            <b>Education:</b>
-                        <table width="70%">
-                            <tr>
-                                <th>Level</th>
-                                <th>Name of instution</th>
-                            </tr>
-                            <tr>
-                                <td>Bachelors:</td>
-                                <td>Islington College</td>
-                            </tr>
-                            <tr>
-                                <td>+2 level NEB:</td>
-                                <td>Global College of Management</td>
-                            </tr>
-                            <tr>
-                                <td>School level SEE:</td>
-                                <td>The Excelsior School</td>
-                            </tr>
-                        </table><br>
-        </div>
-
-    
-        <div style="background-color: black; width: 4px;"></div><!--makes a line in the middle-->
-        <div style=" flex:1">
-                
-                <b>Technical skills:</b>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="divider-line d-none d-md-block"></div>
+                    <div class="col-md-5">
+                        <div class="section-title">Technical Skills:</div>
                         <ul>
                             <li>SQL</li>
                             <li>Java</li>
                         </ul>
-                <b>Soft Skills:</b>
+                        
+                        <div class="section-title">Soft Skills:</div>
+                        <ul>
+                            <li>Active listening</li>
+                            <li>Critical thinking</li>
+                        </ul>
+                        
+                        <div class="section-title">Certification:</div>
+                        <ul>
+                            <li>Global Professional Pathway Course (Data Visualization)</li>
+                        </ul>
+                        
+                        <div class="section-title">Achievement:</div>
+                        <ul>
+                            <li>Best delegate in MUN</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sichu" class="creator-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Sichu Maharjan</h3>
+                        <p>"I am a management background student currently studying 1st year of BSc Hons Computing at Islington College. I have always been interested in web developing. This coursework has presented a wonderful opportunity for me to develop a webpage as per my liking. I want to pursue a career in web developing in the future."</p>
+                        
+                        <table class="table table-borderless">
+                            <tr>
+                                <td><b>Date of Birth:</b></td>
+                                <td>2063-03-12</td>
+                            </tr>
+                            <tr>
+                                <td><b>Address:</b></td>
+                                <td>Khusibu, Nayabazar</td>
+                            </tr>
+                            <tr>
+                                <td><b>Phone no:</b></td>
+                                <td>9849543461</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="section-title">Education:</div>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Level</th>
+                                    <th>Name of Institution</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bachelors:</td>
+                                    <td>Islington College</td>
+                                </tr>
+                                <tr>
+                                    <td>+2 level NEB:</td>
+                                    <td>Global College of Management</td>
+                                </tr>
+                                <tr>
+                                    <td>School level SEE:</td>
+                                    <td>The Excelsior School</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="divider-line d-none d-md-block"></div>
+                    <div class="col-md-5">
+                        <div class="section-title">Technical Skills:</div>
+                        <ul>
+                            <li>SQL</li>
+                            <li>Java</li>
+                        </ul>
+                        
+                        <div class="section-title">Soft Skills:</div>
                         <ul>
                             <li>Communication</li>
                             <li>Problem solving</li>
                         </ul>
-                <b>Certification:</b>
+                        
+                        <div class="section-title">Certification:</div>
                         <ul>
                             <li>Global Professional Pathway Course (Data Visualization)</li>
                         </ul>
-                <b>Achievement</b>
+                        
+                        <div class="section-title">Achievement:</div>
                         <ul>
                             <li>Best presenter in economics presentation</li>
                         </ul>
-        </div>
-        </div>
-        <br>
-        <div style="display: flex; flex-direction: row; gap: 10px; background-color: rgb(231, 225, 229); padding-top: 20px;">
-            <div style=" flex:1">
-                <h3>Aviyaan Shrestha</h3>
-                <p>"Although my background is in management, I am currently pursuing my first year of BSc (Hons) Computing at Islington College. I have always been fascinated by front end development,  I am eager to pursue a career in web development in the future."</p>
-                <table>
-                    <tr>
-                        <td><b>Date of Birth:</b></td>
-                        <td>2063-06-28</td>
-                    </tr>
-                    <tr>
-                        <td><b>Address:</b></td>
-                        <td>sano Bharang, Kathmandu</td>
-                    </tr>
-                    
-                    <tr>
-                        <td><b>Phone no:</b></td>
-                        <td>9841237466</td>
-                    </tr>
-                </table>
-                <br>
-                <b>Education:</b>
-                            <table width="70%">
+                    </div>
+                </div>
+            </div>
+
+            <div id="aviyaan" class="creator-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Aviyaan Shrestha</h3>
+                        <p>"Although my background is in management, I am currently pursuing my first year of BSc (Hons) Computing at Islington College. I have always been fascinated by front end development, I am eager to pursue a career in web development in the future."</p>
+                        
+                        <table class="table table-borderless">
+                            <tr>
+                                <td><b>Date of Birth:</b></td>
+                                <td>2063-06-28</td>
+                            </tr>
+                            <tr>
+                                <td><b>Address:</b></td>
+                                <td>sano Bharang, Kathmandu</td>
+                            </tr>
+                            <tr>
+                                <td><b>Phone no:</b></td>
+                                <td>9841237466</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="section-title">Education:</div>
+                        <table class="table table-borderless">
+                            <thead>
                                 <tr>
                                     <th>Level</th>
-                                    <th>Name of instution</th>
+                                    <th>Name of Institution</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
                                     <td>Bachelors:</td>
                                     <td>Islington College</td>
@@ -243,71 +512,113 @@
                                     <td>School level SEE:</td>
                                     <td>Modern Indian School</td>
                                 </tr>
-                            </table><br>
-            </div>
-            <div style="background-color: black; width: 4px;"></div><!--makes a line in the middle-->
-            <div style=" flex:1">
-                    
-                    <b>Technical skills:</b>
-                            <ul>
-                                <li>SQL</li>
-                                <li>Java</li>
-                            </ul>
-                    <b>Soft Skills:</b>
-                            <ul>
-                                <li>Emotional intelligence</li>
-                                <li>Creativity</li>
-                            </ul>
-                    <b>Certification:</b>
-                            <ul>
-                                <li>Global Professional Pathway Course (Data Visualization)</li>
-                            </ul>
-                    <b>Achievement</b>
-                            <ul>
-                                <li>1st in Interhoused football competition</li>
-                            </ul>
-            </div>
-            </div>
-        </main>
-        <!-- Footer-->
-        <footer class="border-top">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <ul class="list-inline text-center">
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="divider-line d-none d-md-block"></div>
+                    <div class="col-md-5">
+                        <div class="section-title">Technical Skills:</div>
+                        <ul>
+                            <li>SQL</li>
+                            <li>Java</li>
                         </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2023</div>
+                        
+                        <div class="section-title">Soft Skills:</div>
+                        <ul>
+                            <li>Emotional intelligence</li>
+                            <li>Creativity</li>
+                        </ul>
+                        
+                        <div class="section-title">Certification:</div>
+                        <ul>
+                            <li>Global Professional Pathway Course (Data Visualization)</li>
+                        </ul>
+                        
+                        <div class="section-title">Achievement:</div>
+                        <ul>
+                            <li>1st in Interhouse football competition</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        </div>
+    </main>
+
+    <!-- Footer - Same as index.html -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="mb-3">
+                        <i class="fas fa-crown me-2" style="color: var(--mj-gold);"></i>
+                        MJ Kingdom
+                    </h5>
+                    <p class="mb-3">Celebrating the legacy of the King of Pop and his timeless music that continues to inspire generations worldwide.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/michaeljackson/" class="text-white me-3" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/michaeljackson?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="text-white me-3" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/michaeljackson/?hl=en" class="text-white me-3" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UC5OrDvL9DscpcAstz7JnQGA" class="text-white me-3" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="mb-3" style="color: var(--mj-gold);">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#welcome" class="text-white-50">The Beat of MJ</a></li>
+                        <li><a href="#khushi" class="text-white-50">Khushi</a></li>
+                        <li><a href="#sichu" class="text-white-50">Sichu</a></li>
+                        <li><a href="#aviyaan" class="text-white-50">Aviyaan</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="mb-3" style="color: var(--mj-gold);">Explore More</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50">Home</a></li>
+                        <li><a href="music.html" class="text-white-50">Music</a></li>
+                        <li><a href="videos.html" class="text-white-50">Videos</a></li>
+                        <li><a href="about.html" class="text-white-50">About</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: var(--mj-gold); opacity: 0.3;">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="text-white-50 mb-0">© 2025 MJ Kingdom. This is a fan-made tribute website celebrating Michael Jackson's musical legacy.</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <p class="text-white-50 mb-0">Made with <i class="fas fa-heart" style="color: var(--mj-red);"></i> for MJ fans worldwide</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Navbar scroll effect - same as index.html
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(13, 13, 13, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+            }
+        });
+
+        // Add hover effects to creator sections
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.creator-section').forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
 </html>
