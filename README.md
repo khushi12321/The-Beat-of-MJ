@@ -24,7 +24,6 @@ WE ARE OPEN TO CONTRIBUTIONS, so please contact us on khushishrestha002@gmail.co
 
 BOOTSTRAP TEMPLATE
 # Reader Free Bootstrap Blog Template
-![reader](https://startbootstrap.com/theme/clean-blog)
 
 👉🏻[View Live Preview](https://startbootstrap.com/previews/clean-blog)
 
