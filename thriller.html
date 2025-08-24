@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thriller: The Album That Changed Music Forever | MJ Kingdom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mj-red: #c8102e;
+            --mj-gold: #d4a017;
+            --mj-silver: #c0c0c0;
+            --mj-dark: #1a1a1a;
+            --mj-darker: #0d0d0d;
+            --mj-white: #ffffff;
+            --text-muted: #6c757d;
+            --gradient-primary: linear-gradient(135deg, var(--mj-red) 0%, #8b0000 100%);
+            --gradient-gold: linear-gradient(135deg, var(--mj-gold) 0%, #b8860b 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--mj-gold);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--mj-red), var(--mj-gold));
+            background-clip: initial;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
+        }
+
+        .nav-link {
+            color: var(--mj-white) !important;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--mj-gold) !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--mj-gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(212, 160, 23, 0.3);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--mj-silver);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--mj-gold);
+            display: block;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            color: var(--mj-silver);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        .album-cover {
+            position: absolute;
+            right: -10%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.2;
+            z-index: 1;
+            max-width: 60%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Article Section */
+        .article-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--mj-dark);
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-lead {
+            font-size: 1.3rem;
+            color: #555;
+            line-height: 1.8;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--mj-dark);
+            margin: 3rem 0 1.5rem;
+            position: relative;
+        }
+
+        .article-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--mj-red);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .article-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #444;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: var(--gradient-gold);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(212, 160, 23, 0.3);
+        }
+
+        .highlight-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white !important;
+        }
+
+        .highlight-box p {
+            font-size: 1.2rem;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.95) !important;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--mj-gold);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .stat-card-icon {
+            font-size: 2.5rem;
+            color: var(--mj-red);
+            margin-bottom: 1rem;
+        }
+
+        .stat-card-number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--mj-dark);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-card-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Track List */
+        .track-list {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .track-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .track-item:last-child {
+            border-bottom: none;
+        }
+
+        .track-item:hover {
+            background: rgba(212, 160, 23, 0.05);
+            border-radius: 10px;
+            margin: 0 -1rem;
+            padding: 1rem;
+        }
+
+        .track-number {
+            background: var(--mj-red);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .track-info {
+            flex: 1;
+        }
+
+        .track-title {
+            font-weight: 600;
+            color: var(--mj-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .track-details {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: var(--mj-dark);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.4;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            color: var(--mj-gold);
+            font-weight: 600;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--mj-gold);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-date {
+            background: var(--mj-red);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--mj-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Awards Section */
+        .awards-section {
+            background: linear-gradient(135deg, var(--mj-red) 0%, #8b0000 100%);
+            color: white;
+            padding: 6rem 0;
+        }
+
+        .award-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .award-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .award-icon {
+            font-size: 3rem;
+            color: var(--mj-gold);
+            margin-bottom: 1rem;
+        }
+
+        .award-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .award-year {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--mj-darker);
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(-50%) rotate(0deg); }
+            50% { transform: translateY(-60%) rotate(2deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 1.5rem;
+                justify-content: center;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 80px);
+                left: 60px !important;
+            }
+            
+            .album-cover {
+                display: none;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .quote-text {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Scroll Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--gradient-gold);
+            z-index: 9999;
+            transition: width 0.25s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-crown me-2"></i>MJ Kingdom</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="music.html">Music</a></li>
+                    <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <h1 class="hero-title">THRILLER</h1>
+                        <p class="hero-subtitle">The Album That Changed Music Forever</p>
+                        <p class="text-white-50 fs-5 mb-4">Released November 30, 1982 • Epic Records</p>
+                        
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <span class="hero-stat-number">70M+</span>
+                                <div class="hero-stat-label">Copies Sold</div>
+                            </div>
+                            <div class="hero-stat">
+                                <span class="hero-stat-number">37</span>
+                                <div class="hero-stat-label">Weeks at #1</div>
+                            </div>
+                            <div class="hero-stat">
+                                <span class="hero-stat-number">8</span>
+                                <div class="hero-stat-label">Grammy Awards</div>
+                            </div>
+                            <div class="hero-stat">
+                                <span class="hero-stat-number">7</span>
+                                <div class="hero-stat-label">Top 10 Singles</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="../assets/img/thriller-cover.jpg" alt="Thriller Album" class="album-cover">
+    </section>
+
+    <section id="story" class="article-section">
+        <div class="container">
+            <div class="article-header">
+                <h1 class="article-title">The Masterpiece That Defined Pop Music</h1>
+                <div class="article-meta">
+                    <i class="fas fa-calendar me-2"></i>Published December 2024
+                    <span class="mx-3">•</span>
+                    <i class="fas fa-clock me-2"></i>8 min read
+                </div>
+                <p class="article-lead">
+                    On November 30, 1982, Michael Jackson released an album that would not only become the best-selling album of all time but fundamentally transform the music industry forever.
+                </p>
+            </div>
+
+            <div class="article-content">
+                <div class="highlight-box">
+                    <h3><i class="fas fa-trophy me-3"></i>Record Breaking Achievement</h3>
+                    <p>Thriller has sold over 70 million copies worldwide and remains the best-selling album in music history, holding records that may never be broken.</p>
+                </div>
+
+                <h2>The Genesis of a Legend</h2>
+                <p>
+                    Following the success of "Off the Wall" (1979), which sold 10 million copies, Michael Jackson was determined to create something even more extraordinary. Despite the commercial success of his previous album, Jackson was disappointed that it never won Album of the Year at the Grammy Awards. This disappointment became the driving force behind what would become his magnum opus.
+                </p>
+
+                <p>
+                    The album was recorded over eight weeks in 1982 at Westlake Recording Studios on Santa Monica Boulevard in Los Angeles, with the legendary Quincy Jones returning as producer. Jackson achieved the highest royalty rate in the music industry at that point: approximately $2 per album sold, a testament to his growing influence and business acumen.
+                </p>
+
+                <h3>The Perfect Partnership: Michael Jackson & Quincy Jones</h3>
+                <p>
+                    The collaboration between Michael Jackson and Quincy Jones was nothing short of magical. Jones, who had first worked with Jackson on "The Wiz," recognized the young artist's incredible potential. Their partnership would prove to be one of the most successful producer-artist relationships in music history.
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-record-vinyl stat-card-icon"></i>
+                        <div class="stat-card-number">9</div>
+                        <div class="stat-card-label">Original Tracks</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line stat-card-icon"></i>
+                        <div class="stat-card-number">600+</div>
+                        <div class="stat-card-label">Weeks on Billboard 200</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-medal stat-card-icon"></i>
+                        <div class="stat-card-number">34x</div>
+                        <div class="stat-card-label">Platinum Certification</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-globe stat-card-icon"></i>
+                        <div class="stat-card-number">#1</div>
+                        <div class="stat-card-label">In Multiple Countries</div>
+                    </div>
+                </div>
+
+                <h2>Cultural Impact and Innovation</h2>
+                <p>
+                    With its perfect blend of pop, rock and funk, Thriller dominated the Billboard 200 for 37 consecutive weeks and had seven singles in the Top 10 of the Billboard Hot 100. The album didn't just break records; it shattered barriers and redefined what was possible in popular music.
+                </p>
+
+                <p>
+                    The album's success was amplified by groundbreaking music videos, particularly the iconic "Thriller" video featuring choreographed zombies and Vincent Price's haunting narration. Price was offered either a one-time $20,000 fee or a percentage of album proceeds and chose the flat fee - a decision that would have cost him millions as the album went on to sell over 110 million copies worldwide.
+                </p>
+
+                <h3>The Vincent Price Connection</h3>
+                <p>
+                    For the title track, Quincy Jones facilitated the recording of a spooky spoken-word sequence by horror actor Vincent Price, imbuing the song with narrative tension. This creative decision added a theatrical element that helped transform "Thriller" from just a song into a complete cinematic experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote-text">
+                "Thriller was groundbreaking and electrifying…it was perfection."
+            </blockquote>
+            <cite class="quote-author">— Epic Records Executive</cite>
+        </div>
+    </section>
+
+    <section id="tracks" class="article-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Complete Track Listing</h2>
+            <div class="track-list">
+                <div class="track-item">
+                    <div class="track-number">1</div>
+                    <div class="track-info">
+                        <div class="track-title">Wanna Be Startin' Somethin'</div>
+                        <div class="track-details">6:02 • Written by Michael Jackson</div>
+                    </div>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">2</div>
+                    <div class="track-info">
+                        <div class="track-title">Baby Be Mine</div>
+                        <div class="track-details">4:20 • Written by Rod Temperton</div>
+                    </div>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">3</div>
+                    <div class="track-info">
+                        <div class="track-title">The Girl Is Mine (feat. Paul McCartney)</div>
+                        <div class="track-details">3:42 • Written by Michael Jackson</div>
+                    </div>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">4</div>
+                    <div class="track-info">
+                        <div class="track-title">Thriller</div>
+                        <div class="track-details">5:57 • Written by Rod Temperton</div>
+                    </div>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">5</div>
+                    <div class="track-info">
+                        <div class="track-title">Beat It</div>
+                        <div class="track-details">4:18 • Written by Michael Jackson</div>
+                    </div>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">6</div>
+                    <div class="track-info">
+                        <div class="track-title">Billie Jean</div>
+                        <div class="track-details">4:54 • Written by Michael Jackson</div>
+                    </div>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">7</div>
+                    <div class="track-info">
+                        <div class="track-title">Human Nature</div>
+                        <div class="track-details">4:06 • Written by Steve Porcaro, John Bettis</div>
+                    </div>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">8</div>
+                    <div class="track-info">
+                        <div class="track-title">P.Y.T. (Pretty Young Thing)</div>
+                        <div class="track-details">3:59 • Written by James Ingram, Quincy Jones</div>
+                    </div>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">9</div>
+                    <div class="track-info">
+                        <div class="track-title">The Lady in My Life</div>
+                        <div class="track-details">5:00 • Written by Rod Temperton</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box mt-5">
+                <h3><i class="fas fa-star me-3"></i>Chart Domination</h3>
+                <p>Seven of the nine tracks became Top 10 hits, making Thriller the first album to achieve this milestone in music history.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="legacy" class="article-section">
+        <div class="container">
+            <div class="article-content">
+                <h2>Lasting Legacy and Influence</h2>
+                <p>
+                    Thriller won a record-breaking eight awards at the 1984 Grammy Awards, including Album of the Year, and was certified 34× platinum by the RIAA. The album's impact extends far beyond sales figures and awards, however.
+                </p>
+
+                <p>
+                    The album spent 37 nonconsecutive weeks at the top of the Billboard 200 and in November 2023, it spent its 600th week on the chart, becoming the 10th album in history to do so. This longevity demonstrates the album's enduring appeal across multiple generations.
+                </p>
+
+                <h3>Breaking Down Barriers</h3>
+                <p>
+                    Thriller didn't just succeed commercially; it broke down racial barriers in the music industry. The album's success on MTV helped integrate the network, which had previously shown reluctance to play videos by Black artists. Jackson's innovative music videos and performances set new standards for production value and artistic vision.
+                </p>
+
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="../assets/img/videos-bg.jpg" alt="Recording Studio">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../assets/img/home-bg.jpg" alt="Music Performance">
+                    </div>
+                </div>
+
+                <h3>The Thriller Dance Phenomenon</h3>
+                <p>
+                    The largest number of people performing the "Thriller" zombie-dance routine simultaneously, according to the Guinness Book of World Records, is 13,597. This record demonstrates how the album transcended music to become a cultural phenomenon that continues to bring people together worldwide.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="awards-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Awards & Recognition</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="award-item">
+                        <i class="fas fa-trophy award-icon"></i>
+                        <div class="award-title">8 Grammy Awards</div>
+                        <div class="award-year">1984</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="award-item">
+                        <i class="fas fa-medal award-icon"></i>
+                        <div class="award-title">American Music Awards</div>
+                        <div class="award-year">1984</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="award-item">
+                        <i class="fas fa-star award-icon"></i>
+                        <div class="award-title">Rock & Roll Hall of Fame</div>
+                        <div class="award-year">2008</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="article-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Thriller Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">April 1982</div>
+                        <h3 class="timeline-title">Recording Begins</h3>
+                        <p>Michael Jackson and Quincy Jones begin recording sessions at Westlake Recording Studios in Los Angeles.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">November 30, 1982</div>
+                        <h3 class="timeline-title">Album Release</h3>
+                        <p>Thriller is officially released by Epic Records, beginning its journey to legendary status.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">February 1983</div>
+                        <h3 class="timeline-title">"Billie Jean" Peaks at #1</h3>
+                        <p>The album's second single reaches the top of the Billboard Hot 100, establishing Thriller's commercial dominance.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 1983</div>
+                        <h3 class="timeline-title">Motown 25 Performance</h3>
+                        <p>Jackson's iconic moonwalk debut on Motown 25 creates global sensation and boosts album sales.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">December 1983</div>
+                        <h3 class="timeline-title">Thriller Music Video</h3>
+                        <p>The groundbreaking 14-minute "Thriller" music video premieres, revolutionizing the medium forever.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">February 1984</div>
+                        <h3 class="timeline-title">Grammy Sweep</h3>
+                        <p>Thriller wins a record-breaking 8 Grammy Awards, including Album of the Year.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">1984</div>
+                        <h3 class="timeline-title">Cultural Phenomenon</h3>
+                        <p>Album achieves unprecedented global success, breaking down racial barriers in music and media.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2009</div>
+                        <h3 class="timeline-title">Certified Diamond</h3>
+                        <p>RIAA certifies Thriller as 29x Platinum, later upgraded to 34x Platinum, making it the best-selling album ever.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="article-section">
+        <div class="container">
+            <div class="article-content">
+                <h2>The Production Magic</h2>
+                <p>
+                    The sonic landscape of Thriller was crafted through meticulous attention to detail. Quincy Jones assembled an all-star team of musicians and engineers, including Bruce Swedien as the recording engineer, whose innovative techniques created the album's distinctive sound.
+                </p>
+
+                <p>
+                    The album featured contributions from legendary musicians like Eddie Van Halen, who played the guitar solo on "Beat It," and Paul McCartney, who duetted with Jackson on "The Girl Is Mine." These collaborations helped bridge different musical worlds and expand the album's appeal across diverse audiences.
+                </p>
+
+                <h3>Studio Innovation</h3>
+                <p>
+                    Bruce Swedien's engineering work on Thriller introduced several groundbreaking recording techniques. His use of the "Acusonic Recording Process" and innovative microphone placement created the album's rich, three-dimensional sound that remains influential in modern recording practices.
+                </p>
+
+                <div class="highlight-box">
+                    <h3><i class="fas fa-headphones me-3"></i>Technical Mastery</h3>
+                    <p>The album was one of the first to be recorded digitally, utilizing state-of-the-art technology that allowed for unprecedented clarity and depth in the final mix.</p>
+                </div>
+
+                <h2>Global Impact and Records</h2>
+                <p>
+                    Thriller's influence extended far beyond the United States. The album topped charts in virtually every country where it was released, making Michael Jackson the first artist to have a top-ten single on the US Billboard Hot 100 in five different decades.
+                </p>
+
+                <p>
+                    The album's success helped establish MTV as a major force in popular culture. Initially resistant to playing videos by Black artists, MTV was eventually forced to embrace Jackson's videos due to overwhelming public demand, helping to integrate the network and change the landscape of music television forever.
+                </p>
+
+                <h3>The Video Revolution</h3>
+                <p>
+                    The music videos for Thriller's singles weren't just promotional tools—they were mini-movies that elevated the art form. The "Thriller" video, directed by John Landis, cost $500,000 to produce and featured elaborate choreography, special effects, and a narrative structure that influenced music videos for decades to come.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="mb-3">
+                        <i class="fas fa-crown me-2" style="color: var(--mj-gold);"></i>
+                        MJ Kingdom
+                    </h5>
+                    <p class="mb-3">Celebrating the legacy of the King of Pop and his timeless music that continues to inspire generations worldwide.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/michaeljackson/" class="text-white me-3" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/michaeljackson?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="text-white me-3" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/michaeljackson/?hl=en" class="text-white me-3" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UC5OrDvL9DscpcAstz7JnQGA" class="text-white me-3" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="mb-3" style="color: var(--mj-gold);">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white-50">Home</a></li>
+                        <li><a href="#story" class="text-white-50">The Story</a></li>
+                        <li><a href="#tracks" class="text-white-50">Track List</a></li>
+                        <li><a href="#legacy" class="text-white-50">Legacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="mb-3" style="color: var(--mj-gold);">Explore More</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="music.html" class="text-white-50">Music</a></li>
+                        <li><a href="videos.html" class="text-white-50">Videos</a></li>
+                        <li><a href="about.html" class="text-white-50">About</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: var(--mj-gold); opacity: 0.3;">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="text-white-50 mb-0">© 2025 MJ Kingdom. This is a fan-made tribute website celebrating Michael Jackson's musical legacy.</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <p class="text-white-50 mb-0">Made with <i class="fas fa-heart" style="color: var(--mj-red);"></i> for MJ fans worldwide</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 100;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 25px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.stat-card, .timeline-item, .award-item, .track-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter animation for hero stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.hero-stat-number');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const animate = () => {
+                    const value = counter.innerHTML;
+                    const target = value.includes('M') ? parseInt(value) : 
+                                  value.includes('+') ? parseInt(value) : parseInt(value);
+                    const data = parseInt(counter.innerHTML);
+                    const time = target / speed;
+                    
+                    if(data < target) {
+                        counter.innerHTML = Math.ceil(data + time);
+                        setTimeout(animate, 50);
+                    } else {
+                        counter.innerHTML = value;
+                    }
+                }
+                animate();
+            });
+        }
+
+        // Animate counters when hero section is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const heroSection = document.querySelector('.hero-section');
+        if (heroSection) {
+            heroObserver.observe(heroSection);
+        }
+
+        // Parallax effect for hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.album-cover');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${-50 + speed * 0.1}%)`;
+            }
+        });
+
+        // Enhanced hover effects for interactive elements
+        document.querySelectorAll('.track-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Dynamic loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading state
+            document.body.style.opacity = '0';
+            
+            // Add stagger animation to timeline items
+            document.querySelectorAll('.timeline-item').forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            // Add floating animation to decorative elements
+            document.querySelectorAll('.stat-card-icon').forEach((icon, index) => {
+                icon.style.animationDelay = `${index * 0.5}s`;
+            });
+        });
+    </script>
+</body>
+</html>
